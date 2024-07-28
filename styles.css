@@ -1,0 +1,290 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    
+    height: 100%;
+    
+    position: relative;
+    background-color: #252422;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 10px 10px 0 0;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.title {
+    flex-grow: 1;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+}
+
+.content {
+    flex-grow: 1;
+    background-color: #252422;
+    padding: 20px;
+    overflow-y: auto;
+    color: #fff;
+}
+
+.content h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 5px;
+}
+
+.content-list {
+    margin-bottom: 20px;
+}
+
+.add-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #00bcd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #00bcd4;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0097a7;
+}
+
+/* ... (kode CSS sebelumnya) ... */
+
+.reminder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: #000;
+    word-break: break-word; /* Ensure text wraps */
+}
+
+.reminder-info {
+    flex-grow: 1; /* Ensure the reminder-info div takes all available space */
+    word-wrap: break-word; /* Ensure text wraps */
+}
+
+.reminder.complete .check-button {
+    background-color: #4caf50;
+}
+
+/* ... (kode CSS lainnya) ... */
+
+.check-button {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.check-button span {
+    display: none;
+}
+
+.reminder.complete .check-button span {
+    display: inline-block;
+    color: white;
+}
+
+.delete-button {
+    width: 24px;
+    height: 24px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.delete-button:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Delete Modal styles */
+.modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.confirm {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    background-color: black;
+    color: white;
+}
+
+.confirm:hover {
+    background-color: black;
+    color: white;
+}
+
+.gear-button {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin-left: 10px;
+}
+
+.gear-button::before {
+    content: '\2699'; 
+    font-size: 16px;
+    color: #ccc;
+}
+
+.gear-button:hover::before {
+    color: #aaa;
+}

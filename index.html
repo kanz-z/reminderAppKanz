@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Reminder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="icon.png" alt="Icon" class="icon">
+            <span class="title">Simple reminder</span>
+            <div class="menu">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="content">
+            <h3>Belum Diselesaikan</h3>
+            <div id="incompleteContent" class="content-list">
+                <p id="noIncompleteReminders">Tidak ada pengingat baru.</p>
+                <!-- Incomplete reminders --> 
+            </div>
+            <h3>Sudah Diselesaikan</h3>
+            <div id="completeContent" class="content-list">
+                <p id="noIncompleteReminders">Tidak ada pengingat yang sudah diselesaikan.</p>
+                <!-- Complete reminders --> 
+            </div>
+        </div>
+        <button class="add-button" onclick="openModal()">+</button>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Tambah Pengingat Baru</h2>
+            <form id="reminderForm">
+                <label for="name">Nama Pengingat:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="description">Deskripsi Pengingat:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="dueDate">Tanggal Penyelesaian:</label>
+                <input type="date" id="dueDate" name="dueDate" required>
+                <label for="dueTime">Jam Penyelesaian:</label>
+                <input type="time" id="dueTime" name="dueTime" required>
+                <button type="submit">Tambah</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Pengingat</h2>
+            <form id="editForm">
+                <label for="editName">Nama Pengingat:</label>
+                <input type="text" id="editName" name="editName" required>
+                <label for="editDescription">Deskripsi Pengingat:</label>
+                <textarea id="editDescription" name="editDescription" required></textarea>
+                <label for="editDueDate">Tanggal Penyelesaian:</label>
+                <input type="date" id="editDueDate" name="editDueDate" required>
+                <label for="editDueTime">Jam Penyelesaian:</label>
+                <input type="time" id="editDueTime" name="editDueTime" required>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <h2>Yakin mau dihapus?</h2>
+            <div class="modal-buttons">
+                <button id="confirmDelete" class="confirm">Ya</button>
+                <button id="cancelDelete" class="cancel">Tidak</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
